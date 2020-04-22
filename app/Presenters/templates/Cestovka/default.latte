@@ -1,0 +1,26 @@
+{block content}
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th><a n:href="Cestovka:default 'destinace'">Destinace</a></th>
+                <th><a n:href="Cestovka:default 'datum'">Den odjezdu</a></th>
+                <th><a n:href="Cestovka:default 'delka'">Počet nocí</a></th>
+                <th><a n:href="Cestovka:default 'cena'"></a>Cena</th>
+                <th>Akce</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $zajezdy as $zajezd}
+            <tr>
+                <td class="text-left"><a n:href="zaznam $zajezd->id">{$zajezd->destinace|upper}</a></td>
+                <td class="text-right">{$zajezd->datum|date:'j.n.Y'}</td>
+                <td class="text-center">{$zajezd->delka}</td>
+                <td class="text-center">{$zajezd->cena} Kč</td>
+                <td class="text-center"><a n:href="Cestovka:update $zajezd->id"><button type="button" class="btn btn-info">upravit</button></a> <a n:href="Cestovka:delete $zajezd->id"><button type="button" class="btn btn-danger">Smazat</button></a></td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    <a n:href="Cestovka:insert"><button type="button" class="btn btn-primary">Nový</button><a/>
+</div>

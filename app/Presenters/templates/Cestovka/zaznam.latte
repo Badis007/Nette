@@ -1,0 +1,9 @@
+{block content}
+<h3 class="text-primary">{$zajezd->destinace}</h3>
+<p>Datum odjezdu: <b>{$zajezd->datum|date:'%d.%m.%Y'}</b>, doprava: <b>{$zajezd->doprava}</b></p>
+<p>Délka pobytu: <b>{$zajezd->delka}</b> nocí, cena: <b>{$zajezd->cena}</b> kč</p>
+<hr>
+<h4>Popis</h4>
+<p>{$zajezd->popis}</p>
+<a n:href="default"><button type="button" class="btn btn-link">Zpět na nabídku zájezdů</button></a>
+
